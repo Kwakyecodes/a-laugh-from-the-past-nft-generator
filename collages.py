@@ -29,7 +29,10 @@ for date in dates:
         if len(pick) == keys.MEME_COUNT_PER_COLLAGE:
             filename = f"{date}_{ind+1}.jpg"
             file_path = os.path.join(collages_directory, filename)
-            make_collage(img_paths=pick, save_as=file_path)
+            try:
+                make_collage(img_paths=pick, save_as=file_path)
+            except:
+                continue
         
          
 print("All done!")
